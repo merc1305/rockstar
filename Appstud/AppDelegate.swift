@@ -16,19 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
-        let ct = BookmarkHelper.getBookmarkList()
-        
-        ServiceManager.requestToGetContacts({ (contacts) -> () in
-            let contact : RSContact = contacts![0] as! RSContact
-            BookmarkHelper.removeContact(contact)
-            
-            let cts = BookmarkHelper.getBookmarkList();
-            
-            
-            }) { (error) -> () in
-                
-        }
+
         return true
     }
 

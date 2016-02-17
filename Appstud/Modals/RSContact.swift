@@ -4,6 +4,7 @@
 //
 //  Created by Tuan Nguyen on 2/17/16.
 //  Copyright © 2016 Elisoft Viet Nam. All rights reserved.
+//  Modified by Toan Nguyen
 //
 
 import UIKit
@@ -14,6 +15,7 @@ class RSContact: NSObject ,NSCopying{
     var lastName : String?
     var image : String?
     var status : String?
+    var isBookmark: Bool?
     
     override static func mj_replacedKeyFromPropertyName() -> [NSObject : AnyObject]!{
         let fields = ["firstName":"firstname",
@@ -48,6 +50,7 @@ class RSContact: NSObject ,NSCopying{
         self.lastName  = aDecoder.decodeObjectForKey("lastName") as? String
         self.image  = aDecoder.decodeObjectForKey("image") as? String
         self.status  = aDecoder.decodeObjectForKey("status") as? String
+        self.isBookmark  = aDecoder.decodeObjectForKey("isBookmark") as? Bool
     }
 
     func encodeWithCoder(aCoder: NSCoder) {
@@ -64,6 +67,10 @@ class RSContact: NSObject ,NSCopying{
         
         if let status = self.status{
             aCoder.encodeObject(status, forKey: "status")
+        }
+        
+        if let isBookmark = self.isBookmark{
+            aCoder.encodeObject(isBookmark, forKey: "isBookmark")
         }
     }
 }

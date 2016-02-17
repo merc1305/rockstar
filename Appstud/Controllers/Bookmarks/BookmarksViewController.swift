@@ -12,6 +12,9 @@ class BookmarksViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    // Create array to save data
+    var bookMarkArray = NSMutableArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +22,15 @@ class BookmarksViewController: UIViewController {
         
         // Setup Table
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // get bookmark list
+        self.bookMarkArray = NSMutableArray(array: BookmarkHelper.getBookmarkList()!)
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +43,7 @@ class BookmarksViewController: UIViewController {
     // MARK: - UITableView Delegate
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.bookMarkArray.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -42,8 +54,16 @@ class BookmarksViewController: UIViewController {
         
         let cell : BookmarkTableCell = tableView.dequeueReusableCellWithIdentifier(BookmarkTableCell.cellReuseIdentifier()) as! BookmarkTableCell
         
+        let contact = self.bookMarkArray[indexPath.row] as! RSContact
+        
+        // display data
+        cell.reloadDataFromRSContact(contact)
+        
+        // handle tap delete
         cell.didTapDeleteClosure = { [unowned self](sender :UIButton) -> Void in
-            
+            self.bookMarkArray.removeObjectAtIndex(indexPath.row)
+            BookmarkHelper.removeContact(contact)
+            self.tableView.reloadData()
         }
         
         cell.selectionStyle = UITableViewCellSelectionStyle.None

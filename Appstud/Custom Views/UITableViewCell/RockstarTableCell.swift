@@ -36,6 +36,13 @@ class RockstarTableCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func reloadDataFromRSContact(contact: RSContact){
+        self.avatarImageView.sd_setImageWithURL(NSURL(string: (contact.profileImage())), placeholderImage: UIImage(named: "avatar"))
+        self.nameLabel.text = "\(contact.firstName!) \(contact.lastName!)"
+        self.statusLabel.text = contact.status!
+        self.checkBoxButton.selected = contact.isBookmark!
+    }
 
     @IBAction func checkBoxTapped(sender: UIButton) {
         self.didTapCheckBoxClosure?(sender: sender)

@@ -18,6 +18,9 @@ class RockStarViewController: UIViewController, UISearchResultsUpdating, UISearc
     var refreshControl:UIRefreshControl!
     // Create a flag to cache search or not
     var shouldShowSearchResults = false
+    // Create array to save data
+    var rockStarArray = NSMutableArray()
+    var rockStarSearchArray = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,20 +32,22 @@ class RockStarViewController: UIViewController, UISearchResultsUpdating, UISearc
         // Create refresh
         self.refreshControl = UIRefreshControl()
         // Set action for UIRefreshControl
-        refreshControl.addTarget(self, action: Selector("getDataFromServer"), forControlEvents: .ValueChanged)
+        self.refreshControl.addTarget(self, action: Selector("getDataFromServer"), forControlEvents: .ValueChanged)
         // Set title by NSAttributedString
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        // Set background
-        self.refreshControl.backgroundColor = UIColor.clearColor()
+        // Add subview
         self.tableView.addSubview(self.refreshControl)
         
         // Configure Search Bar
         self.configureSearchController()
+
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
-        let contact : RSContact = RSContact()
-        let testImage : UIImageView = UIImageView(image: nil)
-        testImage.sd_setImageWithURL(NSURL(string: contact.profileImage()), placeholderImage: nil)
-        
+        // Get Data From Server
+        self.getDataFromServer()
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,10 +60,10 @@ class RockStarViewController: UIViewController, UISearchResultsUpdating, UISearc
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if shouldShowSearchResults {
-            return 1
+            return self.rockStarSearchArray.count
         }
         else {
-            return 5
+            return self.rockStarArray.count
         }
     }
     
@@ -70,17 +75,25 @@ class RockStarViewController: UIViewController, UISearchResultsUpdating, UISearc
         
         let cell : RockstarTableCell = tableView.dequeueReusableCellWithIdentifier(RockstarTableCell.cellReuseIdentifier()) as! RockstarTableCell
         
+        let contact: RSContact?
         // check user is searching?
         if shouldShowSearchResults {
-
+            contact = self.rockStarSearchArray[indexPath.row] as? RSContact
         }
         else {
-
+            contact = self.rockStarArray[indexPath.row] as? RSContact
         }
+        
+        // display data
+        cell.reloadDataFromRSContact(contact!)
         
         // handle user tapped on check box
         cell.didTapCheckBoxClosure = { [unowned self](sender :UIButton) -> Void in
-            
+            if contact?.isBookmark == true{
+                self.setBookMarkRockStar(contact!, selected: false)
+            }else{
+                self.setBookMarkRockStar(contact!, selected: true)
+            }
         }
 
 
@@ -112,10 +125,56 @@ class RockStarViewController: UIViewController, UISearchResultsUpdating, UISearc
     }
     
     /*
-    // MARK: - UIRefreshControl Method
+    // MARK: - Public Method
     */
+    
     func getDataFromServer(){
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
+            ServiceManager.requestToGetContacts({ (rockStar) -> () in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.rockStarArray = NSMutableArray(array: rockStar!)
+                    // check rockstar is bookmark or not
+                    self.rockStarArray.enumerateObjectsUsingBlock({ (obj, index, stop) -> Void in
+                        if let contact = obj as? RSContact{
+                            contact.isBookmark = BookmarkHelper.isContactInBookmarkList(contact)
+                        }
+                    })
+                    // reload data
+                    self.refreshControl.endRefreshing()
+                    self.tableView.reloadData()
+                })
+                }) { (error) -> () in
+                    print(error)
+            }
+        }
+    }
+    
+    func setBookMarkRockStar(contact: RSContact, selected: Bool){
+        if selected{
+            BookmarkHelper.addContact(contact)
+            contact.isBookmark = true
+            
+        }else{
+            BookmarkHelper.removeContact(contact)
+            contact.isBookmark = false
+        }
         
+        // check if user is searching
+        if shouldShowSearchResults{
+            self.rockStarArray.enumerateObjectsUsingBlock({ (obj, index, stop) -> Void in
+                if let contactArray = obj as? RSContact{
+                    if contact.firstName == contactArray.firstName &&
+                        contact.lastName == contactArray.lastName{
+                        
+                        self.rockStarArray.replaceObjectAtIndex(index, withObject: contact)
+                        let shouldStop: ObjCBool = true
+                        stop.initialize(shouldStop)
+                    }
+                }
+            })
+        }
+        
+        self.tableView.reloadData()
     }
 
     /*
@@ -159,9 +218,18 @@ class RockStarViewController: UIViewController, UISearchResultsUpdating, UISearc
         let searchString = searchController.searchBar.text?.lowercaseString
         
         if searchString?.isEmpty == false{
+            self.rockStarSearchArray.removeAllObjects()
+            
+            for person in self.rockStarArray{
+                // name
+                let contactName = NSString(format: "%@ %@",(person as! RSContact).firstName!,(person as! RSContact).lastName!)
+                if (contactName.rangeOfString(searchString!, options: NSStringCompareOptions.CaseInsensitiveSearch).location) != NSNotFound{
+                    self.rockStarSearchArray.addObject(person)
+                }
+            }
             
         }else{
-
+            self.rockStarSearchArray.removeAllObjects()
         }
         
         // Reload the tableview.
