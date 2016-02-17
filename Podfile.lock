@@ -1,20 +1,18 @@
 PODS:
-  - Alamofire (3.2.0)
-  - AlamofireObjectMapper (2.1.2):
-    - Alamofire (~> 3.2)
-    - ObjectMapper (~> 1.0)
   - IQKeyboardManagerSwift (4.0.0)
-  - ObjectMapper (1.1.4)
+  - MJExtension (3.0.10)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
 
 DEPENDENCIES:
-  - Alamofire
-  - AlamofireObjectMapper
   - IQKeyboardManagerSwift
+  - MJExtension
+  - SDWebImage
 
 SPEC CHECKSUMS:
-  Alamofire: 4da478599fccddff361205c8929333d7fe18dceb
-  AlamofireObjectMapper: 82391c31f23e37bdb2660da174bcf81b202da39d
   IQKeyboardManagerSwift: ede2a27b4e1ce053d03073b9c7fa439322f5e405
-  ObjectMapper: 09ff2ad156bb0e103d9dde9bfe10fbde78affeb2
+  MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
 
 COCOAPODS: 0.39.0
