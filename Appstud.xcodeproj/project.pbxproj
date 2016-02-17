@@ -11,6 +11,9 @@
 		543070601C7418A60065ADF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5430705E1C7418A60065ADF3 /* Main.storyboard */; };
 		543070621C7418A60065ADF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 543070611C7418A60065ADF3 /* Assets.xcassets */; };
 		543070651C7418A60065ADF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543070631C7418A60065ADF3 /* LaunchScreen.storyboard */; };
+		ABE6F3091C74228400F4E185 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6F3081C74228300F4E185 /* ServiceManager.swift */; };
+		ABE6F30B1C7422BC00F4E185 /* ServiceConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6F30A1C7422BC00F4E185 /* ServiceConstant.swift */; };
+		ABE6F30E1C74241100F4E185 /* RSContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6F30D1C74241100F4E185 /* RSContact.swift */; };
 		AF3CE66A80EC2845039EBBE4 /* Pods_Appstud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394B626C4CCB3E55008236E8 /* Pods_Appstud.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +27,9 @@
 		543070661C7418A60065ADF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86FF8840B6E75C253778B287 /* Pods-Appstud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appstud.release.xcconfig"; path = "Pods/Target Support Files/Pods-Appstud/Pods-Appstud.release.xcconfig"; sourceTree = "<group>"; };
 		A7D85F34335E7443E398429A /* Pods-Appstud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appstud.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Appstud/Pods-Appstud.debug.xcconfig"; sourceTree = "<group>"; };
+		ABE6F3081C74228300F4E185 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		ABE6F30A1C7422BC00F4E185 /* ServiceConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceConstant.swift; sourceTree = "<group>"; };
+		ABE6F30D1C74241100F4E185 /* RSContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSContact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +66,8 @@
 		543070591C7418A60065ADF3 /* Appstud */ = {
 			isa = PBXGroup;
 			children = (
-				543070731C741B6D0065ADF3 /* Services */,
+				ABE6F30C1C7423F900F4E185 /* Models */,
+				ABE6F3071C74227600F4E185 /* Services */,
 				5430706E1C741ACE0065ADF3 /* Controllers */,
 				5430706F1C741ACE0065ADF3 /* Custom Views */,
 				543070701C741ACE0065ADF3 /* Modals */,
@@ -117,19 +124,29 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		543070731C741B6D0065ADF3 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		9707120E7C85066FB5B12733 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				394B626C4CCB3E55008236E8 /* Pods_Appstud.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ABE6F3071C74227600F4E185 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ABE6F3081C74228300F4E185 /* ServiceManager.swift */,
+				ABE6F30A1C7422BC00F4E185 /* ServiceConstant.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		ABE6F30C1C7423F900F4E185 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ABE6F30D1C74241100F4E185 /* RSContact.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D8F2C4296D545609040656F6 /* Pods */ = {
@@ -264,6 +281,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5430705B1C7418A60065ADF3 /* AppDelegate.swift in Sources */,
+				ABE6F3091C74228400F4E185 /* ServiceManager.swift in Sources */,
+				ABE6F30B1C7422BC00F4E185 /* ServiceConstant.swift in Sources */,
+				ABE6F30E1C74241100F4E185 /* RSContact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
