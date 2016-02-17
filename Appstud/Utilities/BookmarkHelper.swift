@@ -49,6 +49,20 @@ class BookmarkHelper: NSObject {
             storeContactList(bookmarkList)
         }
     }
+    static func isContactInBookmarkList(contact: RSContact) -> Bool {
+        let contacts = getBookmarkList()
+
+        if contacts != nil {
+            for object in contacts!{
+                let ct = object as! RSContact
+                if ct.firstName == contact.firstName && ct.lastName == contact.lastName {
+                    return true;
+                }
+            }
+        }
+        
+        return false;
+    }
     
     static func getBookmarkList() -> NSArray? {
         let contactsEncoded = NSUserDefaults.standardUserDefaults().valueForKey("contacts") as? NSArray
