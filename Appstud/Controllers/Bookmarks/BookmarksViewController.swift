@@ -29,7 +29,10 @@ class BookmarksViewController: UIViewController {
         super.viewWillAppear(animated)
         
         // get bookmark list
-        self.bookMarkArray = NSMutableArray(array: BookmarkHelper.getBookmarkList()!)
+        if let array = BookmarkHelper.getBookmarkList(){
+            self.bookMarkArray = NSMutableArray(array: array)
+        }
+        
         self.tableView.reloadData()
     }
 

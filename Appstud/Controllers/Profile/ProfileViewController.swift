@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
@@ -25,14 +26,15 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         // Setup UIImagePickerController
         self.imagePicker.delegate = self
         self.imagePicker.allowsEditing = true
-        self.imagePicker.sourceType = .Camera
-        self.imagePicker.cameraDevice = .Front
         
         // Get current user data
         self.user = UserProfile.currentUser()
         
         // Set current user data
-        self.userImageView.image = self.user?.userImage
+        if let image = self.user?.userImage{
+            self.userImageView.image = image
+        }
+        
         self.usernameTextField.text = self.user?.userFullName
     }
 
@@ -59,7 +61,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     // MARK: - Button Method
     */
     @IBAction func changeUserImageAction(sender: AnyObject) {
-        self.presentViewController(self.imagePicker, animated: true, completion: nil)
+        if let _ = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo){
+            self.imagePicker.sourceType = .Camera
+            self.imagePicker.cameraDevice = .Front
+            self.presentViewController(self.imagePicker, animated: true, completion: nil)
+        }
+        else{
+            UIAlertView(title: "Error", message: "We do not support this function cause your device has no camera", delegate: nil, cancelButtonTitle: "Close").show()
+        }
     }
     
     // MARK: - UIImagePickerControllerDelegate Methods
