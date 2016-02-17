@@ -15,6 +15,8 @@
 		5430707A1C7420550065ADF3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543070791C7420550065ADF3 /* ProfileViewController.swift */; };
 		5430707C1C74205E0065ADF3 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5430707B1C74205E0065ADF3 /* BookmarksViewController.swift */; };
 		5430707F1C7425060065ADF3 /* RockstarTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5430707E1C7425060065ADF3 /* RockstarTableCell.swift */; };
+		543070811C742AE90065ADF3 /* BookmarkTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543070801C742AE90065ADF3 /* BookmarkTableCell.swift */; };
+		543070831C742D4B0065ADF3 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543070821C742D4B0065ADF3 /* UserProfile.swift */; };
 		AF3CE66A80EC2845039EBBE4 /* Pods_Appstud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394B626C4CCB3E55008236E8 /* Pods_Appstud.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,8 @@
 		543070791C7420550065ADF3 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5430707B1C74205E0065ADF3 /* BookmarksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		5430707E1C7425060065ADF3 /* RockstarTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RockstarTableCell.swift; sourceTree = "<group>"; };
+		543070801C742AE90065ADF3 /* BookmarkTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkTableCell.swift; sourceTree = "<group>"; };
+		543070821C742D4B0065ADF3 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		86FF8840B6E75C253778B287 /* Pods-Appstud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appstud.release.xcconfig"; path = "Pods/Target Support Files/Pods-Appstud/Pods-Appstud.release.xcconfig"; sourceTree = "<group>"; };
 		A7D85F34335E7443E398429A /* Pods-Appstud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appstud.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Appstud/Pods-Appstud.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +122,7 @@
 		543070701C741ACE0065ADF3 /* Modals */ = {
 			isa = PBXGroup;
 			children = (
+				543070821C742D4B0065ADF3 /* UserProfile.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				5430707E1C7425060065ADF3 /* RockstarTableCell.swift */,
+				543070801C742AE90065ADF3 /* BookmarkTableCell.swift */,
 			);
 			path = UITableViewCell;
 			sourceTree = "<group>";
@@ -309,8 +315,10 @@
 			files = (
 				5430707C1C74205E0065ADF3 /* BookmarksViewController.swift in Sources */,
 				5430707A1C7420550065ADF3 /* ProfileViewController.swift in Sources */,
+				543070831C742D4B0065ADF3 /* UserProfile.swift in Sources */,
 				5430705B1C7418A60065ADF3 /* AppDelegate.swift in Sources */,
 				543070781C74204D0065ADF3 /* RockStarViewController.swift in Sources */,
+				543070811C742AE90065ADF3 /* BookmarkTableCell.swift in Sources */,
 				5430707F1C7425060065ADF3 /* RockstarTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
