@@ -11,6 +11,10 @@
 		543070601C7418A60065ADF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5430705E1C7418A60065ADF3 /* Main.storyboard */; };
 		543070621C7418A60065ADF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 543070611C7418A60065ADF3 /* Assets.xcassets */; };
 		543070651C7418A60065ADF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543070631C7418A60065ADF3 /* LaunchScreen.storyboard */; };
+		543070781C74204D0065ADF3 /* RockStarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543070771C74204D0065ADF3 /* RockStarViewController.swift */; };
+		5430707A1C7420550065ADF3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543070791C7420550065ADF3 /* ProfileViewController.swift */; };
+		5430707C1C74205E0065ADF3 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5430707B1C74205E0065ADF3 /* BookmarksViewController.swift */; };
+		5430707F1C7425060065ADF3 /* RockstarTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5430707E1C7425060065ADF3 /* RockstarTableCell.swift */; };
 		AF3CE66A80EC2845039EBBE4 /* Pods_Appstud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394B626C4CCB3E55008236E8 /* Pods_Appstud.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +26,10 @@
 		543070611C7418A60065ADF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		543070641C7418A60065ADF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		543070661C7418A60065ADF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		543070771C74204D0065ADF3 /* RockStarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RockStarViewController.swift; sourceTree = "<group>"; };
+		543070791C7420550065ADF3 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5430707B1C74205E0065ADF3 /* BookmarksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
+		5430707E1C7425060065ADF3 /* RockstarTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RockstarTableCell.swift; sourceTree = "<group>"; };
 		86FF8840B6E75C253778B287 /* Pods-Appstud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appstud.release.xcconfig"; path = "Pods/Target Support Files/Pods-Appstud/Pods-Appstud.release.xcconfig"; sourceTree = "<group>"; };
 		A7D85F34335E7443E398429A /* Pods-Appstud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appstud.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Appstud/Pods-Appstud.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +100,9 @@
 		5430706E1C741ACE0065ADF3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				543070741C741FE80065ADF3 /* Bookmarks */,
+				543070751C741FE80065ADF3 /* Profile */,
+				543070761C741FE80065ADF3 /* Rockstar */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -99,6 +110,7 @@
 		5430706F1C741ACE0065ADF3 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				5430707D1C7424F20065ADF3 /* UITableViewCell */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -122,6 +134,38 @@
 			children = (
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		543070741C741FE80065ADF3 /* Bookmarks */ = {
+			isa = PBXGroup;
+			children = (
+				5430707B1C74205E0065ADF3 /* BookmarksViewController.swift */,
+			);
+			path = Bookmarks;
+			sourceTree = "<group>";
+		};
+		543070751C741FE80065ADF3 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				543070791C7420550065ADF3 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		543070761C741FE80065ADF3 /* Rockstar */ = {
+			isa = PBXGroup;
+			children = (
+				543070771C74204D0065ADF3 /* RockStarViewController.swift */,
+			);
+			path = Rockstar;
+			sourceTree = "<group>";
+		};
+		5430707D1C7424F20065ADF3 /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5430707E1C7425060065ADF3 /* RockstarTableCell.swift */,
+			);
+			path = UITableViewCell;
 			sourceTree = "<group>";
 		};
 		9707120E7C85066FB5B12733 /* Frameworks */ = {
@@ -263,7 +307,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5430707C1C74205E0065ADF3 /* BookmarksViewController.swift in Sources */,
+				5430707A1C7420550065ADF3 /* ProfileViewController.swift in Sources */,
 				5430705B1C7418A60065ADF3 /* AppDelegate.swift in Sources */,
+				543070781C74204D0065ADF3 /* RockStarViewController.swift in Sources */,
+				5430707F1C7425060065ADF3 /* RockstarTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
