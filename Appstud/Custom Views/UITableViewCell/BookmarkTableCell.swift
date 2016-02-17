@@ -1,5 +1,5 @@
 //
-//  RockstarTableCell.swift
+//  BookmarkTableCell.swift
 //  Appstud
 //
 //  Created by Toan on 2/17/16.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-typealias tapCheckBoxClosure = (sender: UIButton) -> Void
+typealias tapDeleteClosure = (sender: UIButton) -> Void
 
-class RockstarTableCell: UITableViewCell {
+class BookmarkTableCell: UITableViewCell {
 
-    static let kCellReuseIdentifier : String = "rockstarTableCell"
+    static let kCellReuseIdentifier : String = "bookmarkTableCell"
     
     static func cellReuseIdentifier() -> String {
         return kCellReuseIdentifier
@@ -21,24 +21,24 @@ class RockstarTableCell: UITableViewCell {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var checkBoxButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     
-    var didTapCheckBoxClosure: tapCheckBoxClosure?
+    var didTapDeleteClosure: tapDeleteClosure?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         avatarImageView.clipsToBounds = true
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
-    @IBAction func checkBoxTapped(sender: UIButton) {
-        self.didTapCheckBoxClosure?(sender: sender)
-    }
     
+    @IBAction func checkBoxTapped(sender: UIButton) {
+        self.didTapDeleteClosure?(sender: sender)
+    }
+
 }

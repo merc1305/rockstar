@@ -14,6 +14,8 @@ class RockStarViewController: UIViewController, UISearchResultsUpdating, UISearc
     
     // Create search controller from iOS 8
     var searchController: UISearchController!
+    // Create UIRefreshControl
+    var refreshControl:UIRefreshControl!
     // Create a flag to cache search or not
     var shouldShowSearchResults = false
     
@@ -24,9 +26,23 @@ class RockStarViewController: UIViewController, UISearchResultsUpdating, UISearc
         
         // Setup Table
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        // Create refresh
+        self.refreshControl = UIRefreshControl()
+        // Set action for UIRefreshControl
+        refreshControl.addTarget(self, action: Selector("getDataFromServer"), forControlEvents: .ValueChanged)
+        // Set title by NSAttributedString
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        // Set background
+        self.refreshControl.backgroundColor = UIColor.clearColor()
+        self.tableView.addSubview(self.refreshControl)
         
         // Configure Search Bar
         self.configureSearchController()
+        
+        let contact : RSContact = RSContact()
+        let testImage : UIImageView = UIImageView(image: nil)
+        testImage.sd_setImageWithURL(NSURL(string: contact.profileImage()), placeholderImage: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,12 +70,19 @@ class RockStarViewController: UIViewController, UISearchResultsUpdating, UISearc
         
         let cell : RockstarTableCell = tableView.dequeueReusableCellWithIdentifier(RockstarTableCell.cellReuseIdentifier()) as! RockstarTableCell
         
+        // check user is searching?
         if shouldShowSearchResults {
 
         }
         else {
 
         }
+        
+        // handle user tapped on check box
+        cell.didTapCheckBoxClosure = { [unowned self](sender :UIButton) -> Void in
+            
+        }
+
 
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
@@ -86,6 +109,13 @@ class RockStarViewController: UIViewController, UISearchResultsUpdating, UISearc
         }else{
             
         }
+    }
+    
+    /*
+    // MARK: - UIRefreshControl Method
+    */
+    func getDataFromServer(){
+        
     }
 
     /*

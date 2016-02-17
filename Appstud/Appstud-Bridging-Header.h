@@ -11,4 +11,5 @@
 
 #import <MJExtension/MJExtension.h>
 #import <MJExtension/MJProperty.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #endif

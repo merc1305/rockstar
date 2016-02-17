@@ -15,10 +15,12 @@
 		5430707A1C7420550065ADF3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543070791C7420550065ADF3 /* ProfileViewController.swift */; };
 		5430707C1C74205E0065ADF3 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5430707B1C74205E0065ADF3 /* BookmarksViewController.swift */; };
 		5430707F1C7425060065ADF3 /* RockstarTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5430707E1C7425060065ADF3 /* RockstarTableCell.swift */; };
-		ABE6F3141C742A1C00F4E185 /* RSContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6F3101C742A1C00F4E185 /* RSContact.swift */; };
-		ABE6F3151C742A1C00F4E185 /* ServiceConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6F3121C742A1C00F4E185 /* ServiceConstant.swift */; };
-		ABE6F3161C742A1C00F4E185 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6F3131C742A1C00F4E185 /* ServiceManager.swift */; };
-		ABE6F31A1C744BC000F4E185 /* BookmarkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6F3191C744BC000F4E185 /* BookmarkHelper.swift */; };
+		543070811C742AE90065ADF3 /* BookmarkTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543070801C742AE90065ADF3 /* BookmarkTableCell.swift */; };
+		543070831C742D4B0065ADF3 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543070821C742D4B0065ADF3 /* UserProfile.swift */; };
+		ABE6F31C1C744F2300F4E185 /* RSContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6F31B1C744F2300F4E185 /* RSContact.swift */; };
+		ABE6F31F1C744F2D00F4E185 /* BookmarkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6F31E1C744F2D00F4E185 /* BookmarkHelper.swift */; };
+		ABE6F3231C744F3A00F4E185 /* ServiceConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6F3211C744F3A00F4E185 /* ServiceConstant.swift */; };
+		ABE6F3241C744F3A00F4E185 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6F3221C744F3A00F4E185 /* ServiceManager.swift */; };
 		AF3CE66A80EC2845039EBBE4 /* Pods_Appstud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394B626C4CCB3E55008236E8 /* Pods_Appstud.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,13 +36,15 @@
 		543070791C7420550065ADF3 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5430707B1C74205E0065ADF3 /* BookmarksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		5430707E1C7425060065ADF3 /* RockstarTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RockstarTableCell.swift; sourceTree = "<group>"; };
+		543070801C742AE90065ADF3 /* BookmarkTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkTableCell.swift; sourceTree = "<group>"; };
+		543070821C742D4B0065ADF3 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		86FF8840B6E75C253778B287 /* Pods-Appstud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appstud.release.xcconfig"; path = "Pods/Target Support Files/Pods-Appstud/Pods-Appstud.release.xcconfig"; sourceTree = "<group>"; };
 		A7D85F34335E7443E398429A /* Pods-Appstud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appstud.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Appstud/Pods-Appstud.debug.xcconfig"; sourceTree = "<group>"; };
-		ABE6F3101C742A1C00F4E185 /* RSContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSContact.swift; sourceTree = "<group>"; };
-		ABE6F3121C742A1C00F4E185 /* ServiceConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceConstant.swift; sourceTree = "<group>"; };
-		ABE6F3131C742A1C00F4E185 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
-		ABE6F3171C74340600F4E185 /* Appstud-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Appstud-Bridging-Header.h"; sourceTree = "<group>"; };
-		ABE6F3191C744BC000F4E185 /* BookmarkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkHelper.swift; sourceTree = "<group>"; };
+		ABE6F31B1C744F2300F4E185 /* RSContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSContact.swift; sourceTree = "<group>"; };
+		ABE6F31E1C744F2D00F4E185 /* BookmarkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkHelper.swift; sourceTree = "<group>"; };
+		ABE6F3211C744F3A00F4E185 /* ServiceConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceConstant.swift; sourceTree = "<group>"; };
+		ABE6F3221C744F3A00F4E185 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		ABE6F3251C744F5100F4E185 /* Appstud-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Appstud-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +81,11 @@
 		543070591C7418A60065ADF3 /* Appstud */ = {
 			isa = PBXGroup;
 			children = (
-				ABE6F3181C744BAD00F4E185 /* Utilities */,
-				ABE6F30F1C742A1C00F4E185 /* Models */,
-				ABE6F3111C742A1C00F4E185 /* Services */,
+				ABE6F3201C744F3A00F4E185 /* Services */,
+				ABE6F31D1C744F2D00F4E185 /* Utilities */,
 				5430706E1C741ACE0065ADF3 /* Controllers */,
 				5430706F1C741ACE0065ADF3 /* Custom Views */,
+				543070701C741ACE0065ADF3 /* Modals */,
 				5430706D1C741A680065ADF3 /* Supporting Files */,
 				5430706C1C741A5C0065ADF3 /* Storyboard */,
 				543070611C7418A60065ADF3 /* Assets.xcassets */,
@@ -101,8 +105,8 @@
 		5430706D1C741A680065ADF3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ABE6F3251C744F5100F4E185 /* Appstud-Bridging-Header.h */,
 				543070661C7418A60065ADF3 /* Info.plist */,
-				ABE6F3171C74340600F4E185 /* Appstud-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -123,6 +127,15 @@
 				5430707D1C7424F20065ADF3 /* UITableViewCell */,
 			);
 			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		543070701C741ACE0065ADF3 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				ABE6F31B1C744F2300F4E185 /* RSContact.swift */,
+				543070821C742D4B0065ADF3 /* UserProfile.swift */,
+			);
+			path = Modals;
 			sourceTree = "<group>";
 		};
 		543070741C741FE80065ADF3 /* Bookmarks */ = {
@@ -153,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				5430707E1C7425060065ADF3 /* RockstarTableCell.swift */,
+				543070801C742AE90065ADF3 /* BookmarkTableCell.swift */,
 			);
 			path = UITableViewCell;
 			sourceTree = "<group>";
@@ -165,29 +179,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		ABE6F30F1C742A1C00F4E185 /* Models */ = {
+		ABE6F31D1C744F2D00F4E185 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				ABE6F3101C742A1C00F4E185 /* RSContact.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		ABE6F3111C742A1C00F4E185 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				ABE6F3121C742A1C00F4E185 /* ServiceConstant.swift */,
-				ABE6F3131C742A1C00F4E185 /* ServiceManager.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		ABE6F3181C744BAD00F4E185 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				ABE6F3191C744BC000F4E185 /* BookmarkHelper.swift */,
+				ABE6F31E1C744F2D00F4E185 /* BookmarkHelper.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		ABE6F3201C744F3A00F4E185 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ABE6F3211C744F3A00F4E185 /* ServiceConstant.swift */,
+				ABE6F3221C744F3A00F4E185 /* ServiceManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		D8F2C4296D545609040656F6 /* Pods */ = {
@@ -321,15 +327,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABE6F3241C744F3A00F4E185 /* ServiceManager.swift in Sources */,
 				5430707C1C74205E0065ADF3 /* BookmarksViewController.swift in Sources */,
 				5430707A1C7420550065ADF3 /* ProfileViewController.swift in Sources */,
-				ABE6F31A1C744BC000F4E185 /* BookmarkHelper.swift in Sources */,
+				ABE6F31F1C744F2D00F4E185 /* BookmarkHelper.swift in Sources */,
+				543070831C742D4B0065ADF3 /* UserProfile.swift in Sources */,
+				ABE6F31C1C744F2300F4E185 /* RSContact.swift in Sources */,
+				ABE6F3231C744F3A00F4E185 /* ServiceConstant.swift in Sources */,
 				5430705B1C7418A60065ADF3 /* AppDelegate.swift in Sources */,
-				ABE6F3161C742A1C00F4E185 /* ServiceManager.swift in Sources */,
-				ABE6F3141C742A1C00F4E185 /* RSContact.swift in Sources */,
 				543070781C74204D0065ADF3 /* RockStarViewController.swift in Sources */,
+				543070811C742AE90065ADF3 /* BookmarkTableCell.swift in Sources */,
 				5430707F1C7425060065ADF3 /* RockstarTableCell.swift in Sources */,
-				ABE6F3151C742A1C00F4E185 /* ServiceConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
