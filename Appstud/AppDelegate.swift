@@ -21,10 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         ServiceManager.requestToGetContacts({ (contacts) -> () in
             let contact : RSContact = contacts![0] as! RSContact
-            print(contact.profileImage())
+            BookmarkHelper.removeContact(contact)
             
-            BookmarkHelper.storeContactList(contacts)
-        
+            let cts = BookmarkHelper.getBookmarkList();
+            
+            
             }) { (error) -> () in
                 
         }

@@ -9,7 +9,7 @@
 import Foundation
 
 class BookmarkHelper: NSObject {
-    static func storeContactList(contacts: NSArray!) {
+    private static func storeContactList(contacts: NSArray!) {
         let result = NSMutableArray(capacity: contacts.count)
         for contact in contacts {
             let data = NSKeyedArchiver.archivedDataWithRootObject(contact)
@@ -17,6 +17,37 @@ class BookmarkHelper: NSObject {
         }
         
         NSUserDefaults.standardUserDefaults().setObject(result, forKey: "contacts")
+    }
+    
+    static func addContact(contact: RSContact){
+        let contacts = getBookmarkList()
+        let bookmarkList : NSMutableArray?
+        if contacts != nil {
+            bookmarkList = NSMutableArray(array: contacts!)
+        }
+        else{
+            bookmarkList = NSMutableArray(capacity: 1)
+        }
+        
+        bookmarkList!.addObject(contact)
+        storeContactList(bookmarkList)
+    }
+    
+    static func removeContact(contact: RSContact) {
+        let contacts = getBookmarkList()
+        let bookmarkList : NSMutableArray?
+        if contacts != nil {
+            bookmarkList = NSMutableArray(array: contacts!)
+            for object in bookmarkList!{
+                let ct = object as! RSContact
+                if ct.firstName == contact.firstName && ct.lastName == contact.lastName {
+                    bookmarkList?.removeObject(ct)
+                    break
+                }
+            }
+
+            storeContactList(bookmarkList)
+        }
     }
     
     static func getBookmarkList() -> NSArray? {
